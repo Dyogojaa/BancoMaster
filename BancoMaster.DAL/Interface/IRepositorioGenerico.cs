@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BancoMaster.DAL.Interface
+{
+    public interface IRepositorioGenerico<TEntity> where TEntity : class
+    {
+        IQueryable<TEntity> PegarTodos();
+        Task<TEntity> PegarPeloId(int Id);        
+        Task Inserir(TEntity entity);
+        Task Inserir(List<TEntity> entity);
+        Task Atualizar(TEntity entity);
+        Task Excluir(int id);        
+        Task Excluir(TEntity entity);
+
+    }
+}
